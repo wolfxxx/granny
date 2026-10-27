@@ -64,7 +64,10 @@ namespace GrannyWorld.EditorTools
 <meta charset=""utf-8"">
 <meta name=""viewport"" content=""width=device-width, initial-scale=1"">
 <title>Sporty Granny's Island</title>
-<link rel=""icon"" href=""TemplateData/favicon.ico"">
+<link rel=""icon"" type=""image/svg+xml"" href=""favicon.svg"">
+<link rel=""icon"" type=""image/png"" sizes=""32x32"" href=""favicon-32.png"">
+<link rel=""apple-touch-icon"" href=""apple-touch-icon.png"">
+<meta name=""theme-color"" content=""#6fbcf0"">
 <style>
   html, body { margin: 0; height: 100%; overflow: hidden; background: #8fc3ea; font-family: system-ui, sans-serif; }
   #game { position: fixed; inset: 0; width: 100%; height: 100%; display: block; outline: none; }
@@ -106,6 +109,14 @@ namespace GrannyWorld.EditorTools
 ".Replace("{NAME}", name);
             System.IO.File.WriteAllText(System.IO.Path.Combine(outputPath, "index.html"), html);
             System.IO.File.WriteAllText(System.IO.Path.Combine(outputPath, ".nojekyll"), "");
+
+            // Granny favicons live in <project>/WebGL; Unity's TemplateData (logo, default icon) is unused.
+            string icons = System.IO.Path.Combine(Application.dataPath, "..", "WebGL");
+            if (System.IO.Directory.Exists(icons))
+                foreach (var file in System.IO.Directory.GetFiles(icons))
+                    System.IO.File.Copy(file, System.IO.Path.Combine(outputPath, System.IO.Path.GetFileName(file)), true);
+            string templateData = System.IO.Path.Combine(outputPath, "TemplateData");
+            if (System.IO.Directory.Exists(templateData)) System.IO.Directory.Delete(templateData, true);
         }
 
         // QualitySettings exposes no API for the per-platform default level, so edit it via serialization.

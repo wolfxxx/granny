@@ -1,3 +1,5 @@
+<img src="docs/favicon.svg" width="96" alt="Granny icon" align="right">
+
 # Sporty Granny's Island
 
 A small 3D platformer made with **Unity 6 (URP)** and **Blender**. Run, sprint and jump through a sunny island as a sporty grandma: front-flip off double jumps, bounce on giant mushrooms, climb a spiral trail of floating islands and collect all 25 golden stars.
