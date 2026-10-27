@@ -1,0 +1,26 @@
+# Mixamo character files are not redistributed (Adobe Mixamo terms).
+# Their .meta files are kept so import settings (Humanoid rig, material remaps) survive.
+/Sporty Granny.fbx
+unity/Assets/GrannyWorld/Models/Granny/*.fbx
+unity/Assets/GrannyWorld/Models/Granny/Textures/*.jpg
+unity/Assets/GrannyWorld/Models/Granny/Textures/*.png
+
+# Unity generated folders
+unity/[Ll]ibrary/
+unity/[Tt]emp/
+unity/[Oo]bj/
+unity/[Bb]uild/
+unity/[Bb]uilds/
+unity/[Ll]ogs/
+unity/[Uu]ser[Ss]ettings/
+unity/*.csproj
+unity/*.sln
+unity/.vs/
+unity/.idea/
+
+# Blender backups
+*.blend1
+
+# OS
+Thumbs.db
+.DS_Store

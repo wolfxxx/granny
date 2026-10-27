@@ -1,0 +1,13 @@
+* text=auto
+*.unityweb binary
+*.wasm binary
+*.data binary
+*.png binary
+*.jpg binary
+*.ico binary
+*.blend binary
+*.fbx binary
+*.asset -text merge=unityyamlmerge diff
+*.unity -text merge=unityyamlmerge diff
+*.anim -text merge=unityyamlmerge diff
+*.controller -text merge=unityyamlmerge diff
